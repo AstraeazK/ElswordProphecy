@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>คำทำนาย simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>คำทำนาย</h1>
+
+  <div class="image-boxes" id="symbolBoxes">
+    <img class="symbol" src="Symbol_none.png" alt="none">
+    <img class="symbol" src="Symbol_none.png" alt="none">
+    <img class="symbol" src="Symbol_none.png" alt="none">
+    <img class="symbol" src="Symbol_none.png" alt="none">
+    <img class="symbol" src="Symbol_none.png" alt="none">
+    <img class="symbol" src="Symbol_none.png" alt="none">
+  </div>
+
+  <button onclick="generate()">สุ่มคำทำนาย</button>
+
+  <div id="inputContainer" style="display: none;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+      <div style="text-align: center;">
+        <p id="inputLabel" style="margin-bottom: 8px;">พิมพ์ตัวเลขและตำแหน่ง</p>
+        <input type="text" id="userInput" placeholder="ตัวอย่าง: - - - 8 - -">
+      </div>
+      <div id="prophecyBox" style="display: none;"></div>
+    </div>
+
+    <div id="resultsWrapper">
+      <div id="resultContainer"></div>
+      <div id="answerContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
