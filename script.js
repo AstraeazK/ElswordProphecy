@@ -6,6 +6,9 @@ let correctAnswer = [];
 let resultDiv = null;
 let selectedProphecy = null;
 let usedProphecies = [];
+let countdownInterval = null;
+let timeRemaining = 100;
+let currentRound = 0;
 
 const prophecyList = [
   { text: "จุดเดียว ความโดดเดี่ยวแต่เป็นเสาหลักแห่งจุดเริ่มต้นที่สมบูรณ์", position: 0 },
@@ -16,7 +19,42 @@ const prophecyList = [
   { text: "หมายเลขสูงสุดบนลูกเต๋าที่รู้จักกันในชื่อหมายเลขปีศาจ ฉันสงสัยว่าชะตาจะพาคุณไปที่ไหน", position: 5 }
 ];
 
-let currentRound = 0;
+function startCountdown() {
+  clearInterval(countdownInterval);
+  timeRemaining = 100;
+
+  updateCountdownDisplay();
+
+  countdownInterval = setInterval(() => {
+    timeRemaining--;
+    updateCountdownDisplay();
+
+    if (timeRemaining <= 0) {
+      clearInterval(countdownInterval);
+      endGame(false, "⏰ หมดเวลา!");
+    }
+  }, 1000);
+}
+
+function updateCountdownDisplay() {
+  const mins = String(Math.floor(timeRemaining / 60)).padStart(2, "0");
+  const secs = String(timeRemaining % 60).padStart(2, "0");
+  document.getElementById("countdown").innerText = `⌛️ ${mins}:${secs}`;
+}
+
+function stopCountdown() {
+  clearInterval(countdownInterval);
+}
+
+function endGame(isWin, message) {
+  resultDiv.innerHTML += `<p>${message}</p>`;
+  resultDiv.scrollTop = resultDiv.scrollHeight;
+  document.getElementById("userInput").disabled = true;
+  document.getElementById("userInput").style.opacity = 0.5;
+  document.getElementById("answerContainer").innerHTML = "";
+  document.getElementById("prophecyBox").style.display = "none";
+}
+
 
 function generate() {
   const boxes = document.getElementById("symbolBoxes").children;
@@ -46,6 +84,7 @@ function generate() {
   correctAnswer = [];
   usedProphecies = [];
   currentRound = 0;
+  startCountdown();
 }
 
 function fadeOut(element, duration = 500) {
@@ -226,11 +265,13 @@ function onImageClick(event) {
         document.getElementById("answerContainer").innerHTML = "";
         document.getElementById("userInput").disabled = true;
         document.getElementById("userInput").style.opacity = 0.5;
+        stopCountdown();
       }, 300);
     }
   });
 
 } else {
+  stopCountdown();
   resultDiv.innerHTML += `<p>Computer Round [${currentRound + 1}]: ❌ ผิด ตำแหน่งที่ ${correctPos + 1} ควรเป็นเลข ${correctNum}</p>`;
   resultDiv.innerHTML += `<p>💭 ลองทบทวนดูใหม่นะ...</p>`;
   resultDiv.scrollTop = resultDiv.scrollHeight;
