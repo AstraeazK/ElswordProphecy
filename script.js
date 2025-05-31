@@ -98,7 +98,6 @@ function endGame(isWin, message) {
   document.getElementById("prophecyBox").style.display = "none";
 }
 
-
 function generate() {
   const boxes = document.getElementById("symbolBoxes").children;
 
