@@ -199,3 +199,25 @@ body {
     .dropdown:hover .dropbtn {
       background-color: #3e8e41;
     }
+
+    .main-container {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: right;
+    }
+
+    #countdown {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }

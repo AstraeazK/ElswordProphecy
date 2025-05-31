@@ -25,13 +25,17 @@ function setLanguage(lang) {
 function applyLanguage() {
   const title = document.getElementById("title");
   const generateBtn = document.querySelector("button[onclick='generate()']");
+  const pickPicture = document.getElementById("inputLabel");
 
   if (currentLanguage === "th") {
     title.innerText = "คำทำนาย";
     generateBtn.innerText = "สุ่มคำทำนาย";
+    pickPicture.innerText = "เลือกรูปภาพที่เป็นคำตอบให้ถูกต้อง";
+
   } else {
     title.innerText = "Prophecy";
     generateBtn.innerText = "Start";
+    pickPicture.innerText = "Choose the correct symbol";
   }
 
   if (selectedProphecy) updateProphecyUI(selectedProphecy);

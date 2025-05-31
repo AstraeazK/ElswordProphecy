@@ -6,30 +6,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body onload="setLanguage(currentLanguage)">
-  <div style="display: flex; flex-direction: column; align-items: flex-end; margin: 10px;">
-    <div id="countdown" style="font-size: 24px; font-weight: bold;">
-      ⌛️ 01:40
-    </div>
-    <div class="dropdown" style="margin-top: 10px;">
-      <button class="dropbtn">🌎 Language</button>
-        <div class="dropdown-content">
+  <div class="main-container">
+    <div class="top-right">
+      <div id="countdown" style="font-size: 24px;">⌛️ 01:40</div>
+      <div class="dropdown">
+        <button class="dropbtn">🌎 Language</button>
+        <div class="dropdown-content" style="text-align: center;">
           <a href="#" onclick="setLanguage('th')">TH</a>
           <a href="#" onclick="setLanguage('en')">EN</a>
         </div>
+      </div>
     </div>
-  </div>
 
-
-
-  <h1 id="title">คำทำนาย</h1>
-
-  <div class="image-boxes" id="symbolBoxes">
-    <img class="symbol" src="Symbol_none.png" alt="none">
-    <img class="symbol" src="Symbol_none.png" alt="none">
-    <img class="symbol" src="Symbol_none.png" alt="none">
-    <img class="symbol" src="Symbol_none.png" alt="none">
-    <img class="symbol" src="Symbol_none.png" alt="none">
-    <img class="symbol" src="Symbol_none.png" alt="none">
+    <div class="center-content">
+      <h1 id="title">คำทำนาย</h1>
+      <div class="image-boxes" id="symbolBoxes">
+        <img class="symbol" src="Symbol_none.png" alt="none">
+        <img class="symbol" src="Symbol_none.png" alt="none">
+        <img class="symbol" src="Symbol_none.png" alt="none">
+        <img class="symbol" src="Symbol_none.png" alt="none">
+        <img class="symbol" src="Symbol_none.png" alt="none">
+        <img class="symbol" src="Symbol_none.png" alt="none">
+      </div>
+    </div>
   </div>
 
   <button onclick="generate()">สุ่มคำทำนาย</button>
