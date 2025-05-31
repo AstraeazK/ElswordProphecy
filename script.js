@@ -51,7 +51,7 @@ const prophecyList = [
   { th: "อาาา...นี่คือตรีเอกานุภาพ ความสมบูรณ์แบบสูงสุด จุดเริ่มต้นของมิติหลายมิติและการเริ่มต้นของ 'ทั้งหมด'", 
     en: "Aaaa... This is the trinity, the ultimate perfection. The beginning of multi-dimensions and the start of 'ALL'.",
     position: 2 },
-  { th: "สี่เหลียมที่เป็นหมายเลขของความมั่นคงและความปลอดภัยที่จะเปิดเส้นทางสู่การสำเร็จอย่างกลมกลืน", 
+  { th: "สี่เหลี่ยมที่เป็นหมายเลขของความมั่นคงและความปลอดภัยที่จะเปิดเส้นทางสู่การสำเร็จอย่างกลมกลืน", 
     en: "The quadrilateral number of stability and security that will open the road to harmonic completion.",
     position: 3 },
   { th: "ดาวที่เปล่งประกาย เขาทั้งห้า ผู้ที่แสวงหาอำนาจจะต้องระวังการเสื่อมทราม", 
@@ -100,7 +100,7 @@ function endGame(isWin, message) {
 
 function generate() {
   const boxes = document.getElementById("symbolBoxes").children;
-
+  document.getElementById("userInput").style.display = "block";
   document.getElementById("userInput").disabled = false;
   document.getElementById("userInput").style.opacity = 1;
   document.getElementById("prophecyBox").style.display = "none";
@@ -369,6 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         this.disabled = true;
         this.style.opacity = 0.5;
+        this.style.display = "none";
 
         if (currentRound === 0) {
           selectedProphecy = getNextProphecy();
