@@ -24,8 +24,6 @@ function setLanguage(lang) {
 
 function applyLanguage() {
   const title = document.getElementById("title");
-  const label = document.getElementById("inputLabel");
-  const input = document.getElementById("userInput");
   const generateBtn = document.querySelector("button[onclick='generate()']");
 
   if (currentLanguage === "th") {
@@ -40,7 +38,7 @@ function applyLanguage() {
 }
 
 const prophecyList = [
-  { th: "จุดเดียว ความโดดเดี่ยวแต่เป็นเสาหลักแห่งจุดเริ่มต้นที่สมบูรณ์", 
+  { th: "จุดเดียว ความโดดเดี่ยวแต่เป็นเสาหลักแห่งจุดเริ่มต้นที่่สมบูรณ์", 
     en: "This is a single point. A lonely solitude, but a complete pillar of beginning.", 
     position: 0 },
   { th: "แสงและความมืด ตัวข้าและผู้อื่น ความถูกต้องและความผิด เมื่อยืนอยู่หน้าทางแยกสองทาง ความขัดแย้งและการต่อต้านเริ่มต้นขึ้น", 
@@ -49,7 +47,7 @@ const prophecyList = [
   { th: "อาาา...นี่คือตรีเอกานุภาพ ความสมบูรณ์แบบสูงสุด จุดเริ่มต้นของมิติหลายมิติและการเริ่มต้นของ 'ทั้งหมด'", 
     en: "Aaaa... This is the trinity, the ultimate perfection. The beginning of multi-dimensions and the start of 'ALL'.",
     position: 2 },
-  { th: "สี่เหลียมทีเป็นหมายเลขของความมั่นคงและความปลอดภัยที่จะเปิดเส้นทางสู่การสำเร็จอย่างกลมกลืน", 
+  { th: "สี่เหลียมที่เป็นหมายเลขของความมั่นคงและความปลอดภัยที่จะเปิดเส้นทางสู่การสำเร็จอย่างกลมกลืน", 
     en: "The quadrilateral number of stability and security that will open the road to harmonic completion.",
     position: 3 },
   { th: "ดาวที่เปล่งประกาย เขาทั้งห้า ผู้ที่แสวงหาอำนาจจะต้องระวังการเสื่อมทราม", 
