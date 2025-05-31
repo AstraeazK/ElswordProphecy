@@ -26,16 +26,18 @@ function applyLanguage() {
   const title = document.getElementById("title");
   const generateBtn = document.querySelector("button[onclick='generate()']");
   const pickPicture = document.getElementById("inputLabel");
+  const noteImg = document.querySelector(".dropdown-content-pic img");
 
   if (currentLanguage === "th") {
     title.innerText = "คำทำนาย";
     generateBtn.innerText = "สุ่มคำทำนาย";
     pickPicture.innerText = "เลือกรูปภาพที่เป็นคำตอบให้ถูกต้อง";
-
+    noteImg.src = "note_TH.png";
   } else {
     title.innerText = "Prophecy";
     generateBtn.innerText = "Start";
     pickPicture.innerText = "Choose the correct symbol";
+     noteImg.src = "note_EN.png";
   }
 
   if (selectedProphecy) updateProphecyUI(selectedProphecy);

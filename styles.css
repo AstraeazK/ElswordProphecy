@@ -138,7 +138,7 @@ body {
       background: radial-gradient(circle at center, #2a1a3f, #0a0a0a);
       border: 2px solid #b084ff;
       box-shadow: 0 0 15px rgba(200, 150, 255, 0.4);
-      color: #e0caff;
+      color: #e1ccff;
       font-size: 1.1em;
       max-width: 800px;
       min-width: 240px;
@@ -155,7 +155,7 @@ body {
     
    .dropbtn {
       background-color: #4CAF50;
-      color: white;
+      color: rgb(98, 15, 105);
       padding: 16px;
       font-size: 16px;
       border: none;
@@ -216,8 +216,32 @@ body {
       text-align: right;
     }
 
+    .top-left {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-align: left;
+    }
+
     #countdown {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
+    }
+
+    .dropdown-pic {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content-pic {
+      display: none;
+      position: absolute;
+      background-color: #e1ccff;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-pic:hover .dropdown-content-pic {
+      display: block;
     }
